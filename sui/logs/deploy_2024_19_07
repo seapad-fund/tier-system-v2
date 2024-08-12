@@ -1,0 +1,296 @@
+Transaction Digest: 7HDQuY6JWi4RaY2PVEkx5VPYd4S3Avo3YAHqMEZscQmb
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Transaction Data                                                                                             │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                   │
+│ Gas Owner: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                │
+│ Gas Budget: 200000000 MIST                                                                                   │
+│ Gas Price: 1000 MIST                                                                                         │
+│ Gas Payment:                                                                                                 │
+│  ┌──                                                                                                         │
+│  │ ID: 0x01709295e20c3618180075a0b8a3991d8c925f26f5f7f75c4c21990ed2b829e8                                    │
+│  │ Version: 47115261                                                                                         │
+│  │ Digest: 7X2JAN8SQZnMKckz3srZaPWn4qaYeuPK2Ves77RSa7QF                                                      │
+│  └──                                                                                                         │
+│                                                                                                              │
+│ Transaction Kind: Programmable                                                                               │
+│ ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────╮ │
+│ │ Input Objects                                                                                            │ │
+│ ├──────────────────────────────────────────────────────────────────────────────────────────────────────────┤ │
+│ │ 0   Pure Arg: Type: address, Value: "0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554" │ │
+│ ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯ │
+│ ╭─────────────────────────────────────────────────────────────────────────╮                                  │
+│ │ Commands                                                                │                                  │
+│ ├─────────────────────────────────────────────────────────────────────────┤                                  │
+│ │ 0  Publish:                                                             │                                  │
+│ │  ┌                                                                      │                                  │
+│ │  │ Dependencies:                                                        │                                  │
+│ │  │   0x0000000000000000000000000000000000000000000000000000000000000001 │                                  │
+│ │  │   0x0000000000000000000000000000000000000000000000000000000000000002 │                                  │
+│ │  └                                                                      │                                  │
+│ │                                                                         │                                  │
+│ │ 1  TransferObjects:                                                     │                                  │
+│ │  ┌                                                                      │                                  │
+│ │  │ Arguments:                                                           │                                  │
+│ │  │   Result 0                                                           │                                  │
+│ │  │ Address: Input  0                                                    │                                  │
+│ │  └                                                                      │                                  │
+│ ╰─────────────────────────────────────────────────────────────────────────╯                                  │
+│                                                                                                              │
+│ Signatures:                                                                                                  │
+│    KhKDjkaSY6jtlgwqQDxYZ9R5DypzdLEk6Vb9f6PhR2xy9M4lF2+G0AAQoLs8XDLtoE3U6Gx9DqSf51NTdjL5Aw==                  │
+│                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Transaction Effects                                                                               │
+├───────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Digest: 7HDQuY6JWi4RaY2PVEkx5VPYd4S3Avo3YAHqMEZscQmb                                              │
+│ Status: Success                                                                                   │
+│ Executed Epoch: 434                                                                               │
+│                                                                                                   │
+│ Created Objects:                                                                                  │
+│  ┌──                                                                                              │
+│  │ ID: 0x103e9917bcbdea060dc4c66515a44cc99ab56d80e367d10c9b0acd8dab3a2546                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: zn4za2p3T9HxLCkT22YGp97hwX8z9bRPdXWfWJLAwCV                                            │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0x2357a96e724c938355d0bc646b59ffceb1e1c0b71ef6e0abbf17b1f1f44a4c6f                         │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: Hsoj8yEVT7PM3PmMwozm9UVCoVUnmmuNPeViff8H3LyY                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0x4439159f49282575abcab89fb314187110ffb6445fc3cbf2cfb1e1d21b50f339                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 82ebmDZn8CagZeKNAz5sCVhJkCLXC8ENCFrSyHXLvsHr                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0x960c3d875191f29e717f0abdcfd1fe4d7ddcc0eea0623637f28a0894324f8cb6                         │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 7mr9A6xHcwQGsw3e8tQuRVXL1WETQN33Eb9KDnJv3BCX                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xb11b19982c46f886a075bcd61ed5b15d7fe2d6e94677e488425f5677558a265d                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 91uJYKQo3Pi3u3PZrhovWjqZxf158zsdPD5hjdZGAYrk                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xbb560b9e3594851463593e9e883a826cd2af52d80156ac085c268442f482226d                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 4Eybak5DsHTfcQRUixGYj8xEctxxzbUyT3jo2EaL9QwT                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xc1492be7a6be210780cfeb5175044c8e3a093ee0beafb225e29ba40e1475a984                         │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )       │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: AhEEXj7iFSnX521qGCo2xAZkag149Tyyza81tCBNxZC8                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xc2ed7bf47e4bce3aecf510b94dc079ec583ab24ebcc82097f22a430ea67cbc5d                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: EDdoD8rtW5qP4TWa2BapJqmobL5BsEE1PDkFhxjY6XUU                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xce42aa82b4511a8970469188d9fe69ed71bf4cfb02368bbcc4ad1747845e7fa7                         │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )       │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: Ej6QHPeBByta3DDSpi8hC4YkinDDKy982kRDp7ZaNJD6                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597                         │
+│  │ Owner: Immutable                                                                               │
+│  │ Version: 1                                                                                     │
+│  │ Digest: 5cDVf5ThNJ4xYbiN48soveBzjS87R4mRhUqX4wdaManR                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xe2202f8428fca55bb9e3d4cccec0d0cff9847642b3ad09106d635450523adca4                         │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )       │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 54NKLYhnHuR55yteHsQVB4gz7T7uPzLYUkSFaAvT8MHW                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xf02a12ff833670e8b12af7123c45d55c34fbebcfdc12dd16cc6657eab0ee2aa8                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: DudVZZbi4xGU4J3jdDLLieLw3QEbmnMjSQnQXSnDeNPx                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xf5f4a2ee9b01d5182646856b8bf958fe7d7872dc2a62c4d5b71e2b5b1cd9074a                         │
+│  │ Owner: Shared( 47115262 )                                                                      │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 6m56DerhZxa7DpAMaYUCksKbDgrZRPiwkLPZLhYeKJ7t                                           │
+│  └──                                                                                              │
+│  ┌──                                                                                              │
+│  │ ID: 0xf65f69b13601e52a2bd59f85c6a4b4b7383aa09ed60893c7975e14e64709b272                         │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: BBvH1TffJWYe8Wo3NYq2vkXVQzvmQoUmBwkbZLzV8jF5                                           │
+│  └──                                                                                              │
+│ Mutated Objects:                                                                                  │
+│  ┌──                                                                                              │
+│  │ ID: 0x01709295e20c3618180075a0b8a3991d8c925f26f5f7f75c4c21990ed2b829e8                         │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 8FXHFmbETFMgS3ymWT66A5DCB3qE3PoqW1PNcJZWmiVa                                           │
+│  └──                                                                                              │
+│ Gas Object:                                                                                       │
+│  ┌──                                                                                              │
+│  │ ID: 0x01709295e20c3618180075a0b8a3991d8c925f26f5f7f75c4c21990ed2b829e8                         │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ Version: 47115262                                                                              │
+│  │ Digest: 8FXHFmbETFMgS3ymWT66A5DCB3qE3PoqW1PNcJZWmiVa                                           │
+│  └──                                                                                              │
+│ Gas Cost Summary:                                                                                 │
+│    Storage Cost: 164228400 MIST                                                                   │
+│    Computation Cost: 2000000 MIST                                                                 │
+│    Storage Rebate: 978120 MIST                                                                    │
+│    Non-refundable Storage Fee: 9880 MIST                                                          │
+│                                                                                                   │
+│ Transaction Dependencies:                                                                         │
+│    BcBdRp5L6Kx72nhoQNwJer93tBecYewSoyhvaurjV2z7                                                   │
+│    Hrv4aqyxhMP7TdHrZc2cRMDpSZL7gECiixiLP8eEpun3                                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────╮
+│ No transaction block events │
+╰─────────────────────────────╯
+
+╭─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Object Changes                                                                                                                          │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Created Objects:                                                                                                                        │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0x103e9917bcbdea060dc4c66515a44cc99ab56d80e367d10c9b0acd8dab3a2546                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::UserStakePoolInfo                             │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: zn4za2p3T9HxLCkT22YGp97hwX8z9bRPdXWfWJLAwCV                                                                                  │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0x2357a96e724c938355d0bc646b59ffceb1e1c0b71ef6e0abbf17b1f1f44a4c6f                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )                                        │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::Admincap                                      │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: Hsoj8yEVT7PM3PmMwozm9UVCoVUnmmuNPeViff8H3LyY                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0x4439159f49282575abcab89fb314187110ffb6445fc3cbf2cfb1e1d21b50f339                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::RegistryStakePool                             │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 82ebmDZn8CagZeKNAz5sCVhJkCLXC8ENCFrSyHXLvsHr                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0x960c3d875191f29e717f0abdcfd1fe4d7ddcc0eea0623637f28a0894324f8cb6                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )                                        │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::version::VAdminCap                                   │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 7mr9A6xHcwQGsw3e8tQuRVXL1WETQN33Eb9KDnJv3BCX                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xb11b19982c46f886a075bcd61ed5b15d7fe2d6e94677e488425f5677558a265d                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::RegistryRequest                               │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 91uJYKQo3Pi3u3PZrhovWjqZxf158zsdPD5hjdZGAYrk                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xbb560b9e3594851463593e9e883a826cd2af52d80156ac085c268442f482226d                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::version::Version                                     │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 4Eybak5DsHTfcQRUixGYj8xEctxxzbUyT3jo2EaL9QwT                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xc1492be7a6be210780cfeb5175044c8e3a093ee0beafb225e29ba40e1475a984                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )                                             │
+│  │ ObjectType: 0x2::dynamic_field::Field<address, 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::VoteInfo>  │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: AhEEXj7iFSnX521qGCo2xAZkag149Tyyza81tCBNxZC8                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xc2ed7bf47e4bce3aecf510b94dc079ec583ab24ebcc82097f22a430ea67cbc5d                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::RequestId                                     │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: EDdoD8rtW5qP4TWa2BapJqmobL5BsEE1PDkFhxjY6XUU                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xce42aa82b4511a8970469188d9fe69ed71bf4cfb02368bbcc4ad1747845e7fa7                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )                                             │
+│  │ ObjectType: 0x2::dynamic_field::Field<address, 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::VoteInfo>  │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: Ej6QHPeBByta3DDSpi8hC4YkinDDKy982kRDp7ZaNJD6                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xe2202f8428fca55bb9e3d4cccec0d0cff9847642b3ad09106d635450523adca4                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Object ID: ( 0xbc9dbcc2ff7d2818f4486d133b7eb31cc535821c5da2c7f1382b85c0c241b911 )                                             │
+│  │ ObjectType: 0x2::dynamic_field::Field<address, 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::VoteInfo>  │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 54NKLYhnHuR55yteHsQVB4gz7T7uPzLYUkSFaAvT8MHW                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xf02a12ff833670e8b12af7123c45d55c34fbebcfdc12dd16cc6657eab0ee2aa8                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::VaultDAO                                      │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: DudVZZbi4xGU4J3jdDLLieLw3QEbmnMjSQnQXSnDeNPx                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xf5f4a2ee9b01d5182646856b8bf958fe7d7872dc2a62c4d5b71e2b5b1cd9074a                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Shared( 47115262 )                                                                                                            │
+│  │ ObjectType: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597::stake::Providers                                     │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 6m56DerhZxa7DpAMaYUCksKbDgrZRPiwkLPZLhYeKJ7t                                                                                 │
+│  └──                                                                                                                                    │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0xf65f69b13601e52a2bd59f85c6a4b4b7383aa09ed60893c7975e14e64709b272                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )                                        │
+│  │ ObjectType: 0x2::package::UpgradeCap                                                                                                 │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: BBvH1TffJWYe8Wo3NYq2vkXVQzvmQoUmBwkbZLzV8jF5                                                                                 │
+│  └──                                                                                                                                    │
+│ Mutated Objects:                                                                                                                        │
+│  ┌──                                                                                                                                    │
+│  │ ObjectID: 0x01709295e20c3618180075a0b8a3991d8c925f26f5f7f75c4c21990ed2b829e8                                                         │
+│  │ Sender: 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554                                                           │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )                                        │
+│  │ ObjectType: 0x2::coin::Coin<0x2::sui::SUI>                                                                                           │
+│  │ Version: 47115262                                                                                                                    │
+│  │ Digest: 8FXHFmbETFMgS3ymWT66A5DCB3qE3PoqW1PNcJZWmiVa                                                                                 │
+│  └──                                                                                                                                    │
+│ Published Objects:                                                                                                                      │
+│  ┌──                                                                                                                                    │
+│  │ PackageID: 0xd138d7e107abe91a30153f984d69a0872ff300b6b1c38026a915ffb5002ca597                                                        │
+│  │ Version: 1                                                                                                                           │
+│  │ Digest: 5cDVf5ThNJ4xYbiN48soveBzjS87R4mRhUqX4wdaManR                                                                                 │
+│  │ Modules: stake, stake_entries, version                                                                                               │
+│  └──                                                                                                                                    │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Balance Changes                                                                                   │
+├───────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  ┌──                                                                                              │
+│  │ Owner: Account Address ( 0xc37ce899eb568f490a521590787b167e65300d15819c85c4a12ee8480f2c3554 )  │
+│  │ CoinType: 0x2::sui::SUI                                                                        │
+│  │ Amount: -165250280                                                                             │
+│  └──

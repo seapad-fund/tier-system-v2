@@ -1,0 +1,31 @@
+[package]
+name = "SeaPad"
+version = "0.0.2"
+#published-at = "0xafe3a3daee8fac3c611609601f24455df467b471d84866bf11dd05b60350c151"
+
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui", subdir = "crates/sui-framework/packages/sui-framework", rev = "testnet" }
+
+
+[addresses]
+seapad = "0x00"
+#seapad = "0x0"
+sui = "0x02"
+
+
+# staking test addresses.
+treasury = "0x13"
+emergency = "0x14"
+alice = "0x15"
+bob = "0x16"
+jame = "0x17"
+treasury_new = "0x18"
+mary = "0x19"
+alice_new = "0x20"
+
+# staking wallet
+acc_1 = "0x976cddd58bea69f004ef7627fb8832bc1620fa37cc427c6f0824fdbe90d4af29"
+acc_2 = "0x7d3b208540043967aa996c23ea1e5125a0df7ebbbc7f1f05d3fb4e1b95cd5472"
+acc_3 = "0x6ca3a468fa562ab9845ac473f1a039f06db572626e4185347346d3b02965e938"
+treasury_test = "0x38839f21968e4210ab4cec7a9397186438abe22adb623824be973f7dd26ba5b6"

@@ -1,0 +1,35 @@
+{
+  "name": "stake-tier-v2-bsc-sm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seapad-fund/stake-tier-v2-bsc-sm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seapad-fund/stake-tier-v2-bsc-sm/issues"
+  },
+  "homepage": "https://github.com/seapad-fund/stake-tier-v2-bsc-sm#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.1",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.6",
+    "hardhat": "^2.21.0"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@openzeppelin/contracts": "^5.0.2",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "@openzeppelin/hardhat-upgrades": "^3.1.0",
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1"
+  }
+}

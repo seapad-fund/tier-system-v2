@@ -1,0 +1,5 @@
+const TOKEN = {
+  DEMO_TOKEN: "0x4519e7563175b281A84966Ef54165D6F05F44A66",
+};
+
+module.exports = {TOKEN};
