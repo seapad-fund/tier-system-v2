@@ -5,6 +5,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "./TreasuryRole.sol";
 
 contract Staking is
@@ -13,6 +14,8 @@ contract Staking is
     AccessControlUpgradeable,
     TreasuryRole
 {
+    using SafeERC20 for ERC20Upgradeable;
+
     // Constants
     uint256 public constant ONE_YEAR = 31536000; // One year in seconds.
     bytes32 public constant TREASURY = keccak256("TREASURY"); // Treasury role - use to withdraw tokne from contract.
@@ -133,7 +136,7 @@ contract Staking is
         uint256 _stakeItemIndex,
         address _userAddress
     );
-    event RestakeRewardAll(address _userAddress, uint256 _amount);
+    event RestakeRewardAll(address _userAddress);
     event Restake(
         uint256 _poolIndex,
         uint256 _stakeItemIndex,
@@ -332,13 +335,13 @@ contract Staking is
         );
 
         if (_tokenAddress == address(rewardsToken)) {
-            rewardsToken.transferFrom(
+            rewardsToken.safeTransferFrom(
                 msg.sender,
                 address(this),
                 _depositAmount
             );
         } else {
-            stakingToken.transferFrom(
+            stakingToken.safeTransferFrom(
                 msg.sender,
                 address(this),
                 _depositAmount
@@ -548,7 +551,7 @@ contract Staking is
             upgradedPool.totalUserStaked = upgradedPool.totalUserStaked + 1;
         }
         upgradedPool.userItemIndexes[msg.sender].push(stakeItem.itemIndex);
-        upgradedPool.stakeItem[_stakeItemIndex] = stakeItem;
+        upgradedPool.stakeItem[_stakeItemIndex] = stakeItem; // _stakeItemIndex is unique in all pools.
 
         // remove stake item from old pool
         pool.totalStaked = pool.totalStaked - stakeItem.stakedAmount;
@@ -639,8 +642,8 @@ contract Staking is
 
                 if (item.userAddress != address(0)) {
                     // Check if the item is claimable before processing
-                    totalClaimedAmount += item.remainingReward;
                     _claim(index, item, pool);
+                    totalClaimedAmount += item.remainingReward;
                 }
             }
         }
@@ -662,6 +665,10 @@ contract Staking is
         require(
             stakeItem.unlockTime < block.timestamp,
             "StakingPool: this stake item cannot be unstaked yet"
+        );
+        require(
+            stakeItem.unstaked == false,
+            "StakingPool: this item is already unstaked"
         );
 
         _unstake(_poolIndex, stakeItem);
@@ -719,11 +726,8 @@ contract Staking is
 
     /**
      * @notice Transfer reward to stake amount all stake item without reset lock period
-     * @param _amount new stake amount
      */
-    function restakeRewardAll(
-        uint256 _amount
-    ) external nonReentrant stopAllCheck(msg.sender) {
+    function restakeRewardAll() external nonReentrant stopAllCheck(msg.sender) {
         for (uint256 index = 0; index < pools.length; index++) {
             StakePool storage pool = pools[index];
             uint256[] memory userStakeIndexes = pool.userItemIndexes[
@@ -736,7 +740,7 @@ contract Staking is
             }
         }
 
-        emit RestakeRewardAll(msg.sender, _amount);
+        emit RestakeRewardAll(msg.sender);
     }
 
     /**
@@ -773,9 +777,7 @@ contract Staking is
             for (uint index = 0; index < userItemIndexes.length; index++) {
                 uint256 itemIndex = userItemIndexes[index];
                 StakeItem storage item = pool.stakeItem[itemIndex];
-                if (item.remainingReward > 0) {
-                    _restake(pool, item);
-                }
+                _restake(pool, item);
             }
         }
 
@@ -968,7 +970,7 @@ contract Staking is
                 ) {
                     StakeItem storage item = pool.stakeItem[itemIndex];
                     amount += item.stakedAmount;
-                    stakingToken.transfer(
+                    stakingToken.safeTransfer(
                         _userAddressArr[i],
                         item.stakedAmount
                     );
@@ -1157,7 +1159,11 @@ contract Staking is
         // mapping stake item to user address
         stakePool.userItemIndexes[msg.sender].push(stakeItemIndex);
 
-        stakingToken.transferFrom(_stakeAddress, address(this), _stakeAmount);
+        stakingToken.safeTransferFrom(
+            _stakeAddress,
+            address(this),
+            _stakeAmount
+        );
     }
 
     function _unstake(
@@ -1176,8 +1182,8 @@ contract Staking is
         _stakeItem.unlockTime = block.timestamp + stakePool.lockPeriod;
         _stakeItem.unstaked = true;
 
-        stakingToken.transfer(msg.sender, _stakeItem.stakedAmount);
-        rewardsToken.transfer(msg.sender, _stakeItem.remainingReward);
+        stakingToken.safeTransfer(msg.sender, _stakeItem.stakedAmount);
+        rewardsToken.safeTransfer(msg.sender, _stakeItem.remainingReward);
 
         // reset reward
         _stakeItem.remainingReward = 0;
@@ -1219,7 +1225,7 @@ contract Staking is
         _updateRewardRemaining(pool.poolIndex, stakeItem);
         pool.totalRewardClaimed += stakeItem.remainingReward;
         stakeItem.unlockTime = block.timestamp + stakeItem.lockPeriod;
-        rewardsToken.transfer(msg.sender, stakeItem.remainingReward);
+        rewardsToken.safeTransfer(msg.sender, stakeItem.remainingReward);
 
         // reset reward
         stakeItem.remainingReward = 0;
@@ -1236,7 +1242,7 @@ contract Staking is
         );
         _updateRewardRemaining(_poolIndex, _stakeItem);
         _stakepool.totalRewardClaimed += _stakeItem.remainingReward;
-        rewardsToken.transfer(msg.sender, _stakeItem.remainingReward);
+        rewardsToken.safeTransfer(msg.sender, _stakeItem.remainingReward);
 
         emit Claim(
             _poolIndex,
@@ -1283,9 +1289,9 @@ contract Staking is
         );
 
         if (_tokenAddress == address(stakingToken)) {
-            stakingToken.transfer(withdrawWallet, _amount);
+            stakingToken.safeTransfer(withdrawWallet, _amount);
         } else {
-            rewardsToken.transfer(withdrawWallet, _amount);
+            rewardsToken.safeTransfer(withdrawWallet, _amount);
         }
     }
 }
