@@ -243,9 +243,9 @@ contract Staking is
     function initialize(
         address _stakingToken,
         address _rewardToken,
-        address[] memory _treasuryAddresses,
-        address[] memory _managerAddresses,
-        address[] memory _providerAddresses,
+        address[] calldata _treasuryAddresses,
+        address[] calldata _managerAddresses,
+        address[] calldata _providerAddresses,
         uint256 _numConfirmationsRequired,
         address _withdrawWallet
     ) public initializer {
@@ -317,7 +317,7 @@ contract Staking is
     }
 
     /**
-     * @notice Deposit rewards= tokens into the contract
+     * @notice Deposit rewards tokens into the contract
      * @param _depositAmount the amount of token
      */
     function depositReward(
@@ -445,8 +445,8 @@ contract Staking is
      * @param _stakeItemIndexArr array of stake items
      */
     function updateAPY(
-        uint256[] memory _poolIndexArr,
-        uint256[] memory _stakeItemIndexArr,
+        uint256[] calldata _poolIndexArr,
+        uint256[] calldata _stakeItemIndexArr,
         uint256 _apyRate,
         uint256 _apyDecimals
     ) external nonReentrant onlyOwner {
@@ -587,7 +587,7 @@ contract Staking is
         uint256 _poolIndex,
         uint256 _stakeAmount,
         address _stakeAddress,
-        string memory _reqId
+        string calldata _reqId
     ) external nonReentrant onlyRole(PROVIDER) {
         require(
             _poolIndex >= 0 && _poolIndex < pools.length,
@@ -642,8 +642,8 @@ contract Staking is
 
                 if (item.userAddress != address(0)) {
                     // Check if the item is claimable before processing
-                    _claim(index, item, pool);
-                    totalClaimedAmount += item.remainingReward;
+                    uint256 rewardClaimed = _claim(index, item, pool);
+                    totalClaimedAmount += rewardClaimed;
                 }
             }
         }
@@ -754,6 +754,7 @@ contract Staking is
     ) external nonReentrant stopAllCheck(msg.sender) {
         StakePool storage pool = pools[_poolIndex];
         StakeItem storage stakeItem = pool.stakeItem[_stakeItemIndex];
+
         _restake(pool, stakeItem);
 
         emit Restake(
@@ -769,7 +770,7 @@ contract Staking is
      * @param _poolIndexes array of pool indexes
      */
     function restakeAll(
-        uint256[] memory _poolIndexes
+        uint256[] calldata _poolIndexes
     ) external nonReentrant stopAllCheck(msg.sender) {
         for (uint i = 0; i < _poolIndexes.length; i++) {
             StakePool storage pool = pools[i];
@@ -940,8 +941,6 @@ contract Staking is
     {
         Transaction storage transaction = multisigTransactions[_txIndex];
 
-        require(isConfirmed[_txIndex][msg.sender], "tx not confirmed");
-
         transaction.numConfirmations -= 1;
         isConfirmed[_txIndex][msg.sender] = false;
 
@@ -952,7 +951,7 @@ contract Staking is
      * @notice Return token to all users
      */
     function stopEmergency(
-        address[] memory _userAddressArr
+        address[] calldata _userAddressArr
     ) external nonReentrant onlyOwner {
         uint256 amount;
 
@@ -1022,7 +1021,7 @@ contract Staking is
      */
     function getUserStakes(
         address _userAddress,
-        uint256[] memory _poolIndexes
+        uint256[] calldata _poolIndexes
     ) public view returns (UserPoolInfo[] memory) {
         UserPoolInfo[] memory userPoolInfo = new UserPoolInfo[](
             _poolIndexes.length
@@ -1221,6 +1220,7 @@ contract Staking is
             stakeItem.userAddress == msg.sender,
             "StakingPool: This stake item belongs to another address"
         );
+        require(!pool.paused, "StakingPool: Restaking is paused");
 
         _updateRewardRemaining(pool.poolIndex, stakeItem);
         pool.totalRewardClaimed += stakeItem.remainingReward;
@@ -1235,7 +1235,7 @@ contract Staking is
         uint256 _poolIndex,
         StakeItem storage _stakeItem,
         StakePool storage _stakepool
-    ) private {
+    ) private returns (uint256) {
         require(
             _stakeItem.userAddress == msg.sender,
             "StakingPool: This stake item belongs to another address"
@@ -1253,7 +1253,10 @@ contract Staking is
         );
 
         // reset reward
+        uint256 rewardClaimed = _stakeItem.remainingReward;
         _stakeItem.remainingReward = 0;
+
+        return rewardClaimed;
     }
 
     function _updateRewardRemaining(
