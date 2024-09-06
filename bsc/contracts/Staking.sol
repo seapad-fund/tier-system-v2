@@ -91,6 +91,7 @@ contract Staking is
     uint256 public currentItemIndex;
     bool public stopAll;
     mapping(string => bool) public reqId; // Mapping reqId to check in migrate stake.
+    uint256[48] __gap;
 
     event CreatePool(
         uint256 _poolIndex,
@@ -1200,6 +1201,10 @@ contract Staking is
             "StakingPool: This stake item belongs to another address"
         );
         require(!pool.paused, "StakingPool: Restaking is paused");
+        require(
+            address(stakingToken) == address(rewardsToken),
+            "StakingPool: Staking token must be the same as reward token"
+        );
 
         if (stakeItem.userAddress != address(0)) {
             _updateRewardRemaining(_poolIndex, stakeItem);
